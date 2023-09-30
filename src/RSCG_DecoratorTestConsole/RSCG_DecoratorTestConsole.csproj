@@ -5,6 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -18,10 +19,16 @@
   </ItemGroup>
 
   <ItemGroup>
+	  
+
 	  <ProjectReference Include="..\RSCG_DecoratorCommon\RSCG_DecoratorCommon.csproj" />
-	  <ProjectReference Include="..\RSCG_Decorator\RSCG_Decorator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
-		  
-	  </ProjectReference>
+	  <ProjectReference Include="..\RSCG_Decorator\RSCG_Decorator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+
+	  <!--
+	  <PackageReference Include="RSCG_Decorator" Version="7.2023.930.2116" OutputItemType="Analyzer" ReferenceOutputAssembly="false"  />
+	  <PackageReference Include="RSCG_DecoratorCommon" Version="7.2023.930.2116" />
+	  -->
+
   </ItemGroup>
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>

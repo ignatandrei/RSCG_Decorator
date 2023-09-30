@@ -5,6 +5,47 @@
 	  <LangVersion>latest</LangVersion>
 	  <Nullable>enable</Nullable>
 	  <ImplicitUsings>enable</ImplicitUsings>
+	  <IsPackable>true</IsPackable>
   </PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+
+		<None Include="../../README.md" Pack="true" PackagePath="\" />
+		<None Include="../../readme.txt">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<PackAsTool>false</PackAsTool>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<Version>7.2023.930.2116</Version>
+		<Authors>Andrei Ignat</Authors>
+		<Description>Roslyn Decorator Common</Description>
+		<Title>RSCG Decorator Common</Title>
+		<PackageTags>C#;.NET;</PackageTags>
+		<!--<PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageIcon>tb.png</PackageIcon>
+    -->
+		<RepositoryUrl>https://github.com/ignatandrei/RSCG_Decorator</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/ignatandrei/RSCG_Decorator</PackageProjectUrl>
+		<RepositoryType>GIT</RepositoryType>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Copyright>MIT</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<IncludeSymbols>true</IncludeSymbols>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<Deterministic>true</Deterministic>
+		<DebugType>embedded</DebugType>
+
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
 
 </Project>

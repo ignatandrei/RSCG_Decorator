@@ -7,7 +7,7 @@ var serviceCollection = new ServiceCollection()
             options.SingleLine = true;
             options.TimestampFormat = "HH:mm:ss ";
         }))
-          .AddSingleton<IPerson, Person>();
+          .AddTransient<IPerson, Person>();
 
 var x = 2 - 1;
 //TODO: put here x=1

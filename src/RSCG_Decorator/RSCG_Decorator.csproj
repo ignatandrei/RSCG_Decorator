@@ -7,6 +7,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<IsRoslynComponent>true</IsRoslynComponent>
 		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+		<!--<IncludeBuildOutput>false</IncludeBuildOutput>-->
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -16,6 +17,8 @@
 		</PackageReference>
 		<PackageReference Include="System.CodeDom" PrivateAssets="all" GeneratePathProperty="true" Version="7.0.0" />
 		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0" />
+		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+
 		<PackageReference Include="ThisAssembly.AssemblyInfo" Version="1.4.1" PrivateAssets="all" ReferenceOutputAssembly="false" OutputItemType="Analyzer">
 
 		</PackageReference>
@@ -40,4 +43,45 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\RSCG_DecoratorCommon\RSCG_DecoratorCommon.csproj" />
 	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+
+		<None Include="../../README.md" Pack="true" PackagePath="\" />
+		<None Include="../../readme.txt">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<PackAsTool>false</PackAsTool>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<Version>7.2023.930.2116</Version>
+		<Authors>Andrei Ignat</Authors>
+		<Description>Roslyn Decorator for a class- intercept methods</Description>
+		<Title>RSCG Decorator</Title>
+		<PackageTags>C#;.NET;</PackageTags>
+		<!--<PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageIcon>tb.png</PackageIcon>
+    -->
+		<RepositoryUrl>https://github.com/ignatandrei/RSCG_Decorator</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/ignatandrei/RSCG_Decorator</PackageProjectUrl>
+		<RepositoryType>GIT</RepositoryType>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Copyright>MIT</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<IncludeSymbols>true</IncludeSymbols>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<Deterministic>true</Deterministic>
+		<DebugType>embedded</DebugType>
+
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+
 </Project>

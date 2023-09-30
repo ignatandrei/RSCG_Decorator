@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "dotnet build --configuration Release",
+    "test": "dotnet test --configuration Release",
+    "ci": "dotnet r build && dotnet r test",
+    "pack":"dotnet r build && dotnet pack --configuration Release --include-source  --include-symbols --no-build -o PACK"
+  }
+}
