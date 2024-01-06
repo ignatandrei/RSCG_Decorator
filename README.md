@@ -71,4 +71,6 @@ var data = serviceProvider.GetRequiredService<IPerson>();
 //obtaining Person_Decorator because is the last one
 
 ```
+# More Roslyn Source Code Generators
 
+You can find more RSCG with examples at [Roslyn Source Code Generators](https://ignatandrei.github.io/RSCG_Examples/v2/)
